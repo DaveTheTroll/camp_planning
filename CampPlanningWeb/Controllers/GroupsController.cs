@@ -98,6 +98,7 @@ namespace CampPlanningWeb.Controllers
             {
                 return NotFound();
             }
+
             ModelState.Remove("Nation");
             if (ModelState.IsValid)
             {
@@ -163,7 +164,7 @@ namespace CampPlanningWeb.Controllers
 
         private bool GroupExists(int id)
         {
-          return _context.Group.Any(e => e.GroupID == id);
+          return (_context.Group?.Any(e => e.GroupID == id)).GetValueOrDefault();
         }
     }
 }

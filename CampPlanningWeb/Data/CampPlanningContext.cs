@@ -14,8 +14,8 @@ namespace CampPlanningWeb.Data
         {
         }
 
-        public DbSet<CampPlanningWeb.Models.Group> Group { get; set; }
-        public DbSet<CampPlanningWeb.Models.Nation> Nation { get; set; }
         public DbSet<CampPlanningWeb.Models.TentType> TentType { get; set; }
+        public DbSet<CampPlanningWeb.Models.Nation> Nation { get; set; }
+        public DbSet<CampPlanningWeb.Models.Group>? Group { get; set; }
     }
 }

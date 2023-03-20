@@ -22,7 +22,9 @@ namespace CampPlanningWeb.Controllers
         // GET: TentTypes
         public async Task<IActionResult> Index()
         {
-              return View(await _context.TentType.ToListAsync());
+              return _context.TentType != null ? 
+                          View(await _context.TentType.ToListAsync()) :
+                          Problem("Entity set 'CampPlanningContext.TentType'  is null.");
         }
 
         // GET: TentTypes/Details/5
@@ -155,7 +157,7 @@ namespace CampPlanningWeb.Controllers
 
         private bool TentTypeExists(int id)
         {
-          return _context.TentType.Any(e => e.TentTypeID == id);
+          return (_context.TentType?.Any(e => e.TentTypeID == id)).GetValueOrDefault();
         }
     }
 }
