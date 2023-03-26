@@ -3,3 +3,5 @@
 bin
 /CampPlanningWeb/Data/Migrations
 /CampPlanningWeb/Migrations
+/.vs
+obj
